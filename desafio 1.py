@@ -1,8 +1,8 @@
-numero1 = float(input("Digite o primeiro número: "))
-numero2 = float(input("Digite o segundo número: "))
+n1 = float(input("Digite o primeiro número: "))
+n2 = float(input("Digite o segundo número: "))
 
-# Calcula a soma
-soma = numero1 + numero2
+# Calcule a soma dos números
+soma = n1 + n2
 
-# Exibe o resultado
-print(f"A soma de {numero1} e {numero2} é {soma}.")
+# Exibir resultado da soma
+print(f"A soma de {n1} e {n2} é {soma}.")
