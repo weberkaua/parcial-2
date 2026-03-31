@@ -7,6 +7,6 @@ for i in range(5):
     nomes.append(nome)
 
 # Imprimindo o resultado
-print("\nOs nomes digitados foram:")
+print("\os nomes digitados foram:")
 for nome in nomes:
     print("- " + nome)
