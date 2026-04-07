@@ -1,1 +1,52 @@
 
+def converter_para_hms(segundos):
+    """Converte segundos em horas, minutos e segundos."""
+    horas = segundos // 3600
+    minutos = (segundos % 3600) // 60
+    segundos_restantes = segundos % 60
+    return horas, minutos, segundos_restantes
+
+def converter_para_segundos(horas, minutos, segundos):
+    """Converte horas, minutos e segundos em total de segundos."""
+    return (horas * 3600) + (minutos * 60) + segundos
+
+def menu():
+    print("-" * 30)
+    print("CONVERSOR DE TEMPO")
+    print("-" * 30)
+    print("1. Segundos ➔ HMS (Horas, Minutos, Segundos)")
+    print("2. HMS ➔ Segundos")
+    print("0. Sair")
+    return input("Escolha uma opção: ")
+
+def executar():
+    while True:
+        opcao = menu()
+
+        try:
+            if opcao == "1":
+                s_total = int(input("Digite o total de segundos: "))
+                h, m, s = converter_para_hms(s_total)
+                print(f"\n✅ Resultado: {h}h {m}min {s}seg")
+
+            elif opcao == "2":
+                h = int(input("Horas: "))
+                m = int(input("Minutos: "))
+                s = int(input("Segundos: "))
+                
+                total = converter_para_segundos(h, m, s)
+                print(f"\n✅ Resultado: {total} segundos")
+
+            elif opcao == "0":
+                print("Saindo do programa...")
+                break
+            else:
+                print("\n⚠️ Opção inválida! Tente novamente.")
+        
+        except ValueError:
+            print("\n❌ Erro: Por favor, digite apenas números inteiros.")
+        
+        print("\n")
+
+if __name__ == "__main__":
+    executar()
